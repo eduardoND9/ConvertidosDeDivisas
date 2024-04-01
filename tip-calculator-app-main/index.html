@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <link rel="stylesheet" href="output.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body class="bg-[#c5e4e7]">
+
+  <div class="flex justify-center items-center m-16">
+    <img src="images/logo.svg" alt="">  
+  </div>
+
+  <div class="flex justify-center items-center" >
+
+    <div class="grid grid-cols-2 bg-white h-96 rounded-xl "> 
+
+      <div class="w-96  ">              <!-- CONVERCION------------------>
+        <form class="p-5" action="">
+          <div>
+            <h2 class="mt-2 text-lg font-semibold">Monto a convertir (€)</h2>
+            <input class="bg-gray-200 rounded-lg  w-36 h-16 p-2 outline-none text-2xl px-5" type="number" placeholder="€" > 
+          </div>
+          <div>
+            <h2 class="mt-10">Tipo de cambio Dolares</h2>
+            <input class="bg-gray-100 rounded-lg h-8 w-1/2 p-2 outline-none" type="text" placeholder="$"> 
+          </div>
+          <div>
+            <h2 class="mt-2">Tipo de cambio en Soles</h2>
+            <input class="bg-gray-100 rounded-lg h-8 w-1/2 p-2 outline-none " type="text" placeholder="s/"> 
+          </div>
+          
+        </form>
+       
+      </div>
+
+      <div class=" rounded-xl w-96 p-5"><!--RESULTADO--------------- -->
+        <div class="bg-[#00474b] rounded-xl h-full w-full p-5">
+          <form action="">
+
+            <div class="h-16  flex items-center relative">
+              <h2 class="text-white">Conversión en Dólares</h2>
+              <div class="flex absolute left-44">
+                <img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">
+                <label class=" font-thin text-2xl text-[#31B4A3]" for="">1000.00</label>
+              </div>
+              
+            </div>
+            <div class="h-16  flex items-center relative">
+              <h2 class="text-white">Conversión en Soles</h2>
+              <div class="flex absolute left-44">
+                <img class="w-8 h-8 " src="images/icon-sol.svg" alt="">
+                <label class=" font-thin text-2xl text-[#31B4A3]" for="">4545 </label>
+              </div>
+              
+            </div>
+          </form>
+          <button class="bg-[#0d686d] rounded-xl h-8 w-full mt-10 ">
+            <span class="text-white">Convertir</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    
+  </div>
+
+
+  
+
+</body>
+</html>
