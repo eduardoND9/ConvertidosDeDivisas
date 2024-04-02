@@ -7,6 +7,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="output.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
@@ -22,51 +23,69 @@
     <img src="images/logo.svg" alt="">  
   </div>
 
-  <div class="flex justify-center items-center" >
+  <div class="flex justify-center items-center font-fuenteSpace" >
 
-    <div class="grid grid-cols-2 bg-white h-96 rounded-xl "> 
+    <div class="grid grid-cols-1 bg-white h-96 rounded-xl  md:grid-cols-2 "> 
 
-      <div class="w-96  ">              <!-- CONVERCION------------------>
-        <form class="p-5" action="">
+      <div class="w-96 px-5">              <!-- CONVERCION------------------>
+        <form class="p-3" action="">
           <div>
-            <h2 class="mt-2 text-lg font-semibold">Monto a convertir (€)</h2>
-            <input class="bg-gray-200 rounded-lg  w-36 h-16 p-2 outline-none text-2xl px-5" type="number" placeholder="€" > 
+            <h2 class="mt-6 text-lg text-[#00474b]">Monto a convertir €</h2>
+            <div class="input-wrapper relative">
+              <input class="bg-gray-200 rounded-lg  w-full  outline-none text-2xl text-right px-4 py-2 mt-2" type="number" placeholder="0" id="valor" > 
+              <img class="absolute top-5 left-2 fill-slate-600 " src="images/icon-euro.svg" alt="">
+            </div>
+            
           </div>
           <div>
-            <h2 class="mt-10">Tipo de cambio Dolares</h2>
-            <input class="bg-gray-100 rounded-lg h-8 w-1/2 p-2 outline-none" type="text" placeholder="$"> 
+            <h2 class="mt-10 text-[#00474b] font-medium">Tipo de cambio en Dolares</h2>
+            <div class="input-wrapper relative">
+              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right" type="number" placeholder="0"> 
+              <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-dollar.svg" alt="">
+            </div>
           </div>
           <div>
-            <h2 class="mt-2">Tipo de cambio en Soles</h2>
-            <input class="bg-gray-100 rounded-lg h-8 w-1/2 p-2 outline-none " type="text" placeholder="s/"> 
+            <h2 class="mt-2 text-[#00474b] ">Tipo de cambio en Soles</h2>
+            <div class="input-wrapper relative">
+              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right " type="number" placeholder="0"> 
+              <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-sol.svg" alt="">
+            </div>
           </div>
           
         </form>
        
       </div>
 
-      <div class=" rounded-xl w-96 p-5"><!--RESULTADO--------------- -->
+      <div class=" rounded-xl mt-6 md:mt-0 w-96 p-5 bg-white md:bg-transparent "><!--RESULTADO--------------- -->
         <div class="bg-[#00474b] rounded-xl h-full w-full p-5">
           <form action="">
 
-            <div class="h-16  flex items-center relative">
-              <h2 class="text-white">Conversión en Dólares</h2>
-              <div class="flex absolute left-44">
-                <img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">
-                <label class=" font-thin text-2xl text-[#31B4A3]" for="">1000.00</label>
+            <div class="h-16 mt-5 flex items-center relative">
+              <div>
+                <h2 class="text-white text-base">Conversión en</h2>
+                <h3 class="text-xs text-[#31B4A3]">/ Dólares</h3>
+              </div>
+              <div class="flex absolute left-36 items-center">
+                <!--<img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">-->
+                <span class="text-5xl font-bold text-[#31B4A3]">$</span>
+                <label class="text-3xl text-[#31B4A3] font-bold" for="">0.00</label>
               </div>
               
             </div>
-            <div class="h-16  flex items-center relative">
-              <h2 class="text-white">Conversión en Soles</h2>
-              <div class="flex absolute left-44">
-                <img class="w-8 h-8 " src="images/icon-sol.svg" alt="">
-                <label class=" font-thin text-2xl text-[#31B4A3]" for="">4545 </label>
+            <div class="h-16 mt-5 flex items-center relative">
+              <div>
+                <h2 class="text-white text-base">Conversión en</h2>
+                <h3 class="text-xs text-[#31B4A3]">/ Soles</h3>
+              </div>
+              <div class="flex absolute left-36 items-center">
+                <!--<img class="w-8 h-8 " src="images/icon-sol.svg" alt="">-->
+                <span class="text-3xl font-bold text-[#31B4A3]">S/</span>
+                <label class="text-3xl text-[#31B4A3] font-bold" for=""></label>
               </div>
               
             </div>
           </form>
-          <button class="bg-[#0d686d] rounded-xl h-8 w-full mt-10 ">
+          <button class="bg-[#0d686d] rounded-xl h-10 w-full mt-5 md:mt-24" id="convertir "  onclick="">
             <span class="text-white">Convertir</span>
           </button>
         </div>
@@ -77,7 +96,7 @@
   </div>
 
 
-  
+  <script src="script.js"></script>
 
 </body>
 </html>
