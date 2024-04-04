@@ -17,11 +17,10 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
-<body class="bg-[#c5e4e7]">
-
-  <div class="flex justify-center items-center m-16">
+<body class="bg-[#c5e4e7] flex justify-center items-center h-screen" >
+  <!-- <div class="flex justify-center items-center m-16">
     <img src="images/logo.svg" alt="">  
-  </div>
+  </div> -->
 
   <div class="flex justify-center items-center font-fuenteSpace" >
 
@@ -31,23 +30,24 @@
         <form class="p-3" action="">
           <div>
             <h2 class="mt-6 text-lg text-[#00474b]">Monto a convertir €</h2>
-            <div class="input-wrapper relative">
-              <input class="bg-gray-200 rounded-lg  w-full  outline-none text-2xl text-right px-4 py-2 mt-2" type="number" placeholder="0" id="valor" > 
-              <img class="absolute top-5 left-2 fill-slate-600 " src="images/icon-euro.svg" alt="">
+            <div class="input-wrapper relative " >
+              <input class="bg-gray-100 rounded-lg  w-full  outline-none text-2xl text-right px-4 py-2 mt-2 focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="valor" > 
+              <img class="absolute top-5 left-2" src="images/icon-euro.svg" alt="">
+              <!-- <object class="absolute top-5 left-2 text-white" type="image/svg+xml" data="images/icon-euro.svg"></object> -->
             </div>
             
           </div>
           <div>
-            <h2 class="mt-10 text-[#00474b] font-medium">Tipo de cambio en Dolares</h2>
+            <h2 class="mt-10 text-[#00474b] font-medium" id="cd">Tipo de cambio en Dolares</h2>
             <div class="input-wrapper relative">
-              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right" type="number" placeholder="0"> 
+              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right focus:bg-gray-200 transition duration-150 focus:scale-105" for="cd" type="number" placeholder="0" id="tDolar"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-dollar.svg" alt="">
             </div>
           </div>
           <div>
             <h2 class="mt-2 text-[#00474b] ">Tipo de cambio en Soles</h2>
             <div class="input-wrapper relative">
-              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right " type="number" placeholder="0"> 
+              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="tSol"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-sol.svg" alt="">
             </div>
           </div>
@@ -68,7 +68,7 @@
               <div class="flex absolute left-36 items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">-->
                 <span class="text-5xl font-bold text-[#31B4A3]">$</span>
-                <label class="text-3xl text-[#31B4A3] font-bold" for="">0.00</label>
+                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold" for="" readonly id ="resultadoD"></input>
               </div>
               
             </div>
@@ -80,14 +80,20 @@
               <div class="flex absolute left-36 items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-sol.svg" alt="">-->
                 <span class="text-3xl font-bold text-[#31B4A3]">S/</span>
-                <label class="text-3xl text-[#31B4A3] font-bold" for=""></label>
+                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold" type="" for="" readonly id ="resultadoS"></input>
               </div>
               
             </div>
           </form>
-          <button class="bg-[#0d686d] rounded-xl h-10 w-full mt-5 md:mt-24" id="convertir "  onclick="">
-            <span class="text-white">Convertir</span>
-          </button>
+          <div class="flex justify-center">
+            <button class="bg-[#0d686d] rounded-xl h-10 w-full mt-5 md:mt-24 hover:bg-emerald-600  active:bg-emerald-700 transition duration-200 transform active:scale-90 " id="convertir">
+              <span class="text-white">Convertir</span>
+            </button>
+          </div>
+          
+
+
+
         </div>
       </div>
     </div>
