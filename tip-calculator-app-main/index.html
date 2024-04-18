@@ -11,16 +11,15 @@
   <link rel="stylesheet" href="output.css">
   <title>Frontend Mentor | Tip calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+
 </head>
-<body class="bg-[#c5e4e7] flex justify-center items-center h-screen" >
+
+<body class="bg-[#c5e4e7] flex justify-center items-center h-screen relative" >
   <!-- <div class="flex justify-center items-center m-16">
     <img src="images/logo.svg" alt="">  
+
   </div> -->
+
 
   <div class="flex justify-center items-center font-fuenteSpace" >
 
@@ -40,14 +39,14 @@
           <div>
             <h2 class="mt-10 text-[#00474b] font-medium" id="cd">Tipo de cambio en Dolares</h2>
             <div class="input-wrapper relative">
-              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right focus:bg-gray-200 transition duration-150 focus:scale-105" for="cd" type="number" placeholder="0" id="tDolar"> 
+              <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right focus:bg-gray-200 transition duration-150 focus:scale-105" for="cd" type="number" placeholder="0" id="tDolar"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-dollar.svg" alt="">
             </div>
           </div>
           <div>
             <h2 class="mt-2 text-[#00474b] ">Tipo de cambio en Soles</h2>
             <div class="input-wrapper relative">
-              <input class="bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="tSol"> 
+              <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="tSol"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-sol.svg" alt="">
             </div>
           </div>
@@ -58,17 +57,19 @@
 
       <div class=" rounded-xl mt-6 md:mt-0 w-96 p-5 bg-white md:bg-transparent "><!--RESULTADO--------------- -->
         <div class="bg-[#00474b] rounded-xl h-full w-full p-5">
-          <form action="">
+          <form action="" class="cursor-not-allowed pointer-events-none">
 
-            <div class="h-16 mt-5 flex items-center relative">
-              <div>
+            <div class="h-16 mt-5 block items-center ">
+              <div >
                 <h2 class="text-white text-base">Conversión en</h2>
                 <h3 class="text-xs text-[#31B4A3]">/ Dólares</h3>
               </div>
-              <div class="flex absolute left-36 items-center">
+              <div class="flex justify-end items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">-->
-                <span class="text-5xl font-bold text-[#31B4A3]">$</span>
-                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold" for="" readonly id ="resultadoD"></input>
+                <span class="bg-slate-500 text-5xl font-bold text-[#31B4A3] ">$</span>
+                <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none"  id ="resultadoD">
+                
+                </input>
               </div>
               
             </div>
@@ -80,11 +81,13 @@
               <div class="flex absolute left-36 items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-sol.svg" alt="">-->
                 <span class="text-3xl font-bold text-[#31B4A3]">S/</span>
-                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold" type="" for="" readonly id ="resultadoS"></input>
+                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none" type="" for="" readonly id ="resultadoS"></input>
               </div>
               
             </div>
           </form>
+          
+          <!--boton--------------- -->
           <div class="flex justify-center">
             <button class="bg-[#0d686d] rounded-xl h-10 w-full mt-5 md:mt-24 hover:bg-emerald-600  active:bg-emerald-700 transition duration-200 transform active:scale-90 " id="convertir">
               <span class="text-white">Convertir</span>
