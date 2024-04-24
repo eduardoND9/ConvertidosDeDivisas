@@ -1,5 +1,4 @@
 const valor=document.getElementById('valor');
-
 const tDolar=document.getElementById('tDolar');
 const tSol=document.getElementById('tSol');
 
@@ -23,8 +22,8 @@ function convertir() {
     // Rdolar.value = (montoConvertir*tipoCambioDolar).toFixed(3);
     // Rsol.value = (montoConvertir*tipoCambioSol).toFixed(3);
 
-    Rdolar.value = threeDecimals(montoConvertir*tipoCambioDolar);
-    Rsol.value = threeDecimals(montoConvertir*tipoCambioSol);
+    Rdolar.textContent = threeDecimals(montoConvertir*tipoCambioDolar);
+    Rsol.textContent = threeDecimals(montoConvertir*tipoCambioSol);
     
 
 }

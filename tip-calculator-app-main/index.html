@@ -46,7 +46,7 @@
           <div>
             <h2 class="mt-2 text-[#00474b] ">Tipo de cambio en Soles</h2>
             <div class="input-wrapper relative">
-              <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="tSol"> 
+              <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105 " type="number" placeholder="0" id="tSol"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-sol.svg" alt="">
             </div>
           </div>
@@ -59,35 +59,39 @@
         <div class="bg-[#00474b] rounded-xl h-full w-full p-5">
           <form action="" class="cursor-not-allowed pointer-events-none">
 
-            <div class="h-16 mt-5 block items-center ">
+            <div class="h-16 mt-5 block items-center">
               <div >
                 <h2 class="text-white text-base">Conversión en</h2>
                 <h3 class="text-xs text-[#31B4A3]">/ Dólares</h3>
               </div>
               <div class="flex justify-end items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">-->
-                <span class="bg-slate-500 text-5xl font-bold text-[#31B4A3] ">$</span>
-                <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none"  id ="resultadoD">
+                <span class=" text-5xl font-bold text-[#31B4A3]">$</span>
+                <label for=""class=" w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none text-right" id ="resultadoD"></label>
+                <!-- <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none"  id ="resultadoD"> -->
                 
                 </input>
               </div>
               
             </div>
-            <div class="h-16 mt-5 flex items-center relative">
+            <div class="h-16 mt-5 block items-center">
               <div>
                 <h2 class="text-white text-base">Conversión en</h2>
                 <h3 class="text-xs text-[#31B4A3]">/ Soles</h3>
               </div>
-              <div class="flex absolute left-36 items-center">
+              <div class="flex justify-end items-center">
                 <!--<img class="w-8 h-8 " src="images/icon-sol.svg" alt="">-->
-                <span class="text-3xl font-bold text-[#31B4A3]">S/</span>
-                <input class="w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none" type="" for="" readonly id ="resultadoS"></input>
+                <span class=" text-5xl font-bold text-[#31B4A3] text-right">S/</span>
+                <label for="" class=" w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none text-right" id ="resultadoS"></label>
+                <!-- <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none" type="" for="" readonly id ="resultadoS"></input> -->
               </div>
               
             </div>
           </form>
           
-          <!--boton--------------- -->
+          
+          
+          <!---------boton--------------- -->
           <div class="flex justify-center">
             <button class="bg-[#0d686d] rounded-xl h-10 w-full mt-5 md:mt-24 hover:bg-emerald-600  active:bg-emerald-700 transition duration-200 transform active:scale-90 " id="convertir">
               <span class="text-white">Convertir</span>
