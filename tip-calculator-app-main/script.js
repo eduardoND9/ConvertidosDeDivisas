@@ -1,29 +1,30 @@
-const valor=document.getElementById('valor');
-const tDolar=document.getElementById('tDolar');
-const tSol=document.getElementById('tSol');
+const MontoConvertir=document.getElementById('montoConvertir');
+const Cambio=document.getElementById('tazaDeCambio');
 
-// CREAR CONSTANTES DE LOS INPUTS DE RESULTADOS (SOLES Y DOLARES)
-const Rdolar =document.getElementById('resultadoD');
-const Rsol =document.getElementById('resultadoS');
+// const formulario = document.getElementById('formConvertir');
+
+const tCambio=Cambio.textContent;
+
+const Resultado =document.getElementById('resultadoD');
 
 const botonConvertir=document.getElementById('convertir');
 
 let currencyData = null;
 
 
-function convertir() {
-    // console.log('convertir currencyData', currencyData);
-    let montoConvertir = parseFloat(valor.value);
-    let tipoCambioDolar = parseFloat(tDolar.value);
-    let tipoCambioSol = parseFloat(tSol.value);
-    
-    
-    // REALIZAR EL CALCULO Y GUARDARLOS EN VARIABLES DE RESULTADOS
-    // Rdolar.value = (montoConvertir*tipoCambioDolar).toFixed(3);
-    // Rsol.value = (montoConvertir*tipoCambioSol).toFixed(3);
+function convertir(event) {
+    let montoConvertir = parseFloat(MontoConvertir.value);
+    let tipoCambio = parseFloat(currencyTaza);
 
-    Rdolar.textContent = threeDecimals(montoConvertir*tipoCambioDolar);
-    Rsol.textContent = threeDecimals(montoConvertir*tipoCambioSol);
+
+    if (montoConvertir) {
+        Resultado.textContent = threeDecimals(montoConvertir*tipoCambio);
+        console.log("tipooo",tipoCambio);
+        console.log("montoC",montoConvertir);
+        console.log("reee",Resultado);
+    } else {
+        Resultado.textContent = '';
+    }
     
 
 }
@@ -34,20 +35,97 @@ function threeDecimals(n) {
 }
 
 botonConvertir.addEventListener('click', convertir);
+MontoConvertir.addEventListener('keyup', convertir);    
+// formulario.addEventListener('submit', convertir);
+
+
+
 
 
 addEventListener("load", async () => {
-    const llamadaApi = await fetch("https://api.currencyapi.com/v3/latest?apikey=cur_live_MuWzheWKsp04uUC8OB0uSwLzZPjqiNR941tm85Ki&currencies=USD%2CPEN&base_currency=EUR")
+    const llamadaApi = await fetch("https://api.currencyapi.com/v3/currencies?apikey=cur_live_vLzFndkoOC4puJkqmwY8yKAKkLdi37ztbvuwoMEf&currencies=")
     
     const respuesta = await llamadaApi.json();
     currencyData = respuesta.data;
+    // console.log("prueba",currencyData);
+    const monedas = Object.keys(currencyData);
 
-    Nsol = currencyData.PEN.value.toFixed(3);
-    Ndolar = currencyData.USD.value.toFixed(3);
-    document.getElementById("tSol").value = Nsol;
-    document.getElementById("tDolar").value = Ndolar;
+  
+    var selectM1 = document.getElementById("monedaUno");
+    var selectM2 = document.getElementById("monedaDos");
 
+    monedas.forEach((valor) => {
+        var opcionElemento = document.createElement('option');
+        opcionElemento.value = valor;
+        opcionElemento.textContent = valor;
+        
+        selectM1.appendChild(opcionElemento);
+
+
+        var opcionElemento2 = document.createElement('option');
+        opcionElemento2.value = valor;
+        opcionElemento2.textContent = valor;
+
+        selectM2.appendChild(opcionElemento2);
+
+    });
+   
+
+    selectM1.value = 'EUR';
+    selectM2.value = 'USD';
+
+    tazaDeCambio();
 
 });
+
+
+
+
+
+const selectUno = document.getElementById('monedaUno');
+const selectDos = document.getElementById('monedaDos');
+const TazaDeCambio = document.getElementById('tazaDeCambio');
+
+let urlBase = 'https://api.currencyapi.com/v3/latest?apikey=cur_live_vLzFndkoOC4puJkqmwY8yKAKkLdi37ztbvuwoMEf&currencies=opcion1&base_currency=opcion2';
+
+selectUno.addEventListener('change', tazaDeCambio,);
+selectDos.addEventListener('change', tazaDeCambio,);
+
+
+
+
+
+let currencyTaza;
+async function tazaDeCambio() {
+
+    const valorSelectUno = selectUno.value;
+    const valorSelectDos = selectDos.value;
+    
+    let nuevaURL = urlBase;
+
+    nuevaURL = nuevaURL.replace('opcion1', valorSelectDos);
+    nuevaURL = nuevaURL.replace('opcion2', valorSelectUno);
+
+
+    try {
+        const respuesta = await fetch(nuevaURL);
+        const datos = await respuesta.json();
+        currencyTaza=datos.data[valorSelectDos].value;
+        TazaDeCambio.textContent = currencyTaza;
+        
+    } catch (error) {
+        console.error('Error al obtener los datos de la API:', error);
+        TazaDeCambio.textContent = 'Error al obtener los datos de la API';
+    }
+    convertir();
+
+}
+
+
+
+
+
+
+
 
 

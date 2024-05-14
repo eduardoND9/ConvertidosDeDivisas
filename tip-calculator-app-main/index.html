@@ -26,17 +26,33 @@
     <div class="grid grid-cols-1 bg-white h-96 rounded-xl  md:grid-cols-2 "> 
 
       <div class="w-96 px-5">              <!-- CONVERCION------------------>
-        <form class="p-3" action="">
-          <div>
-            <h2 class="mt-6 text-lg text-[#00474b]">Monto a convertir €</h2>
+        <form class="p-3 mt-4" id="formConvertir" action="#">
+          <div >
+            <div class="Moneda1 my-5 " disabled>
+              <select class="w-20" name="moneda-uno" id="monedaUno">
+              </select>
+            </div>
+            <div class="Moneda2 my-5">
+              <select class="w-20" name="moneda-dos" id="monedaDos">
+              </select>
+            </div>
+            
+            <span class="mt-8">Taza De Cambio:</span>
+            <div class="mt-2   bg-slate-100 rounded-md h-10 justify-center flex items-center">
+              <div class="" id="tazaDeCambio"></div>
+            </div>
+          
+
+            <h2 class="mt-10 text-lg text-[#00474b]">Monto a convertir </h2>
             <div class="input-wrapper relative " >
-              <input class="bg-gray-100 rounded-lg  w-full  outline-none text-2xl text-right px-4 py-2 mt-2 focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="valor" > 
-              <img class="absolute top-5 left-2" src="images/icon-euro.svg" alt="">
+              <input class="bg-gray-100 rounded-lg  w-full  outline-none text-2xl text-right px-4 py-2 mt-2 focus:bg-gray-200 transition duration-150 focus:scale-105" type="number" placeholder="0" id="montoConvertir" > 
+              <svg  class="absolute top-5 left-2 icon icon-tabler icons-tabler-outline icon-tabler-coins" xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="gray"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14c0 1.657 2.686 3 6 3s6 -1.343 6 -3s-2.686 -3 -6 -3s-6 1.343 -6 3z" /><path d="M9 14v4c0 1.656 2.686 3 6 3s6 -1.344 6 -3v-4" /><path d="M3 6c0 1.072 1.144 2.062 3 2.598s4.144 .536 6 0c1.856 -.536 3 -1.526 3 -2.598c0 -1.072 -1.144 -2.062 -3 -2.598s-4.144 -.536 -6 0c-1.856 .536 -3 1.526 -3 2.598z" /><path d="M3 6v10c0 .888 .772 1.45 2 2" /><path d="M3 11c0 .888 .772 1.45 2 2" /></svg>
+              <!-- <img class="absolute top-5 left-2 fill-gray-400" src="images/coins.svg" alt=""> -->
               <!-- <object class="absolute top-5 left-2 text-white" type="image/svg+xml" data="images/icon-euro.svg"></object> -->
             </div>
             
           </div>
-          <div>
+          <!-- <div>
             <h2 class="mt-10 text-[#00474b] font-medium" id="cd">Tipo de cambio en Dolares</h2>
             <div class="input-wrapper relative">
               <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right focus:bg-gray-200 transition duration-150 focus:scale-105" for="cd" type="number" placeholder="0" id="tDolar"> 
@@ -49,7 +65,7 @@
               <input class="cursor-not-allowed pointer-events-none bg-gray-100 mt-1 rounded-lg h-8 w-1/2 p-2 outline-none text-right  focus:bg-gray-200 transition duration-150 focus:scale-105 " type="number" placeholder="0" id="tSol"> 
               <img class="absolute top-3 left-2 fill-slate-600 " src="images/icon-sol.svg" alt="">
             </div>
-          </div>
+          </div> -->
           
         </form>
        
@@ -61,32 +77,19 @@
 
             <div class="h-16 mt-5 block items-center">
               <div >
-                <h2 class="text-white text-base">Conversión en</h2>
-                <h3 class="text-xs text-[#31B4A3]">/ Dólares</h3>
+                <h2 class="text-white text-base">Conversión </h2>
+                <h3 class="text-xs text-[#31B4A3]">/ </h3>
               </div>
               <div class="flex justify-end items-center">
-                <!--<img class="w-8 h-8 " src="images/icon-dollar.svg  " alt="">-->
-                <span class=" text-5xl font-bold text-[#31B4A3]">$</span>
+                <div>
+                  <svg  class="my-3 icon icon-tabler icons-tabler-outline icon-tabler-coins" xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="#31B4A3"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 14c0 1.657 2.686 3 6 3s6 -1.343 6 -3s-2.686 -3 -6 -3s-6 1.343 -6 3z" /><path d="M9 14v4c0 1.656 2.686 3 6 3s6 -1.344 6 -3v-4" /><path d="M3 6c0 1.072 1.144 2.062 3 2.598s4.144 .536 6 0c1.856 -.536 3 -1.526 3 -2.598c0 -1.072 -1.144 -2.062 -3 -2.598s-4.144 -.536 -6 0c-1.856 .536 -3 1.526 -3 2.598z" /><path d="M3 6v10c0 .888 .772 1.45 2 2" /><path d="M3 11c0 .888 .772 1.45 2 2" /></svg>  
+                </div>
                 <label for=""class=" w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none text-right" id ="resultadoD"></label>
-                <!-- <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none"  id ="resultadoD"> -->
-                
                 </input>
               </div>
               
             </div>
-            <div class="h-16 mt-5 block items-center">
-              <div>
-                <h2 class="text-white text-base">Conversión en</h2>
-                <h3 class="text-xs text-[#31B4A3]">/ Soles</h3>
-              </div>
-              <div class="flex justify-end items-center">
-                <!--<img class="w-8 h-8 " src="images/icon-sol.svg" alt="">-->
-                <span class=" text-5xl font-bold text-[#31B4A3] text-right">S/</span>
-                <label for="" class=" w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none text-right" id ="resultadoS"></label>
-                <!-- <input class="bg-slate-400 w-full text-3xl bg-transparent outline-none text-[#31B4A3] font-bold snap-none" type="" for="" readonly id ="resultadoS"></input> -->
-              </div>
-              
-            </div>
+
           </form>
           
           
