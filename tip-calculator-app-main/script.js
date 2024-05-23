@@ -43,7 +43,7 @@ MontoConvertir.addEventListener('keyup', convertir);
 
 
 addEventListener("load", async () => {
-    const llamadaApi = await fetch("https://api.currencyapi.com/v3/currencies?apikey=cur_live_OVjEHQ4mWHBCu8TK7qSLFMdCaNpJt7jb9PbEw10o&currencies=")
+    const llamadaApi = await fetch("https://api.currencyapi.com/v3/currencies?apikey=cur_live_MuWzheWKsp04uUC8OB0uSwLzZPjqiNR941tm85Ki&currencies=")
     
     const respuesta = await llamadaApi.json();
     currencyData = respuesta.data;
@@ -86,7 +86,7 @@ const selectUno = document.getElementById('monedaUno');
 const selectDos = document.getElementById('monedaDos');
 const TazaDeCambio = document.getElementById('tazaDeCambio');
 
-let urlBase = 'https://api.currencyapi.com/v3/latest?apikey=cur_live_OVjEHQ4mWHBCu8TK7qSLFMdCaNpJt7jb9PbEw10o&currencies=opcion1&base_currency=opcion2';
+let urlBase = 'https://api.currencyapi.com/v3/latest?apikey=cur_live_MuWzheWKsp04uUC8OB0uSwLzZPjqiNR941tm85Ki&currencies=opcion1&base_currency=opcion2';
 
 selectUno.addEventListener('change', tazaDeCambio,);
 selectDos.addEventListener('change', tazaDeCambio,);
@@ -120,12 +120,7 @@ async function tazaDeCambio() {
     convertir();
 
 }
-selectUno.addEventListener('click', function() {
-    this.focus();
-  });
-selectDos.addEventListener('click', function() {
-    this.focus();
-});
+
 
 
 

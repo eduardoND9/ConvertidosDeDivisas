@@ -17,7 +17,7 @@
 <body  class="bg-[#237930] flex flex-col min-h-screen bg-cover bg-center bg-opacity-10 " style=" background-image: url('./tip-calculator-app-main/images/bg-billetes.jpg')">
   
 
-  <main class="flex-grow flex justify-center items-center relative mt-2">
+  <main class="flex-grow flex justify-center items-center relative mt-0">
     <div class="flex justify-center items-center font-fuenteSpace flex-grow" >
 
       <div class="caja grid grid-cols-1 bg-white w-96 xs:w-auto md:h-96  rounded-xl  md:grid-cols-2 mt-0 "> 
@@ -27,10 +27,24 @@
             <div >
               <div class="Moneda1 my-5" disabled>
                 <select class="bg-green-100 text-sm mt-1 block w-full pl-3 pr-10 py-2  border-gray-300 focus:outline-gray-200 focus:ring-green-500 focus:border-green-500 focus:bg-gray-100  rounded-md" name="moneda-uno" id="monedaUno">
+                  <optgroup label="Populares">
+                    <option value="PEN">PEN</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </optgroup>
+                  <optgroup label="Otros:">
+                  </optgroup>
                 </select>
               </div>
               <div class="Moneda2 my-5">
                 <select class="bg-green-100 text-sm mt-1 block w-full pl-3 pr-10 py-2  border-gray-300 focus:outline-gray-200 focus:ring-green-500 focus:border-green-500 focus:bg-gray-100  rounded-md" name="moneda-dos" id="monedaDos">
+                  <optgroup label="Populares:">
+                    <option value="PEN">PEN</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                  </optgroup>
+                  <optgroup label="Otros:">
+                  </optgroup>
                 </select>
               </div>
               
