@@ -120,6 +120,12 @@ async function tazaDeCambio() {
     convertir();
 
 }
+selectUno.addEventListener('click', function() {
+    this.focus();
+  });
+selectDos.addEventListener('click', function() {
+    this.focus();
+});
 
 
 
